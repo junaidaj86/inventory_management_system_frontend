@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Provider from "./provider/authProvider";
+import NextAuthProvider from "./provider/authProvider";
 import DashboardWrapper from "./dashboardWrapper";
 
 const geistSans = localFont({
@@ -28,12 +28,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Provider>
+        <NextAuthProvider>
           <DashboardWrapper>
           {children}
           </DashboardWrapper>
           
-        </Provider>
+        </NextAuthProvider>
       </body>
     </html>
   );
